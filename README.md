@@ -25,10 +25,27 @@ Any slides used during class will be sent out via Ryver after class. Lecture out
 
 ## Assignments
 
-Lab-time code assignments follow each class time. Find these assignments in their own repo.
+1. Daily lab assignments will follow each class time. Each lab has its own repo.
+    - Instructions for completing assignments can be found in their repo's README file.
+    - Most labs will be completed as pairs.
+    - Lab assignments will be submitted using a professional-grade [git-flow](SUBMIT_WITH_GIT.md) aka lots and lots of PR's.
 
-- Instructions for completing assignments can be found in their repo's README files. 
-- Assignments will be submitted using a professional-grade [git-flow](SUBMIT_WITH_GIT.md) aka lots and lots of PR's.
+1. Daily learning journals
+    - **Will not be accepted late.**
+    - [Instructions and example](https://gist.github.com/sajoy/aa9ea616493c8887dd257a411b19a85f)
+
+1. Weekly Code Wars challenge
+    - A specific challenge will be assigned Monday and a solution is due Wednesday. We'll go over different solutions in class.
+    - You are also expected to work on Code Wars Challenges for practice through out the week. The goal is to reach Rank of 6 by the end of class. Each Monday you'll turn in a screenshot of your profile to show your progress.
+
+1. Weekly quizzes
+    - Assigned Wednesday and are due Friday morning.
+    - Open-internet! Use your research skills to try code snippets in the console, or read the docs on MDN.
+    - These quizzes will prepare you for the 401 entry exam.
+
+1. Bonus assignments
+    - Listed in Canvas, these will offer the chance to learn more and/or review the various topics we cover
+    - No due date.
 
 # Required Computer Setup
 
