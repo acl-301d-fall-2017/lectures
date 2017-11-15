@@ -28,7 +28,7 @@ Any slides used during class will be sent out via Ryver after class. Lecture out
 Lab-time code assignments follow each class time. Find these assignments in their own repo.
 
 - Instructions for completing assignments can be found in their repo's README files. 
-- Assignments will be submitted using a professional-grade [git-flow](GIT_FLOW.md) aka lots and lots of PR's.
+- Assignments will be submitted using a professional-grade [git-flow](SUBMIT_WITH_GIT.md) aka lots and lots of PR's.
 
 # Required Computer Setup
 
