@@ -1,0 +1,13 @@
+#landing {
+    width: 70%;
+}
+
+#listings {
+    width: 70%;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+}

@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SPACE!</title>
+    <link rel="stylesheet" href="vendor/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/icons.css">
-    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <h1>SPACE SHIPS!</h1>
+    <header id="landing" class="centered-header">
+        <h1>BUY/SELL SPACE SHIPS!</h1>
         <nav>
             <ul>
                 <li>buy</li>
@@ -20,7 +23,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="listings" class="listing-list">
         <article class="ship-listing">
             <section>
                 <div>Cool Ship Name</div>
@@ -152,7 +155,7 @@
             </section>
         </article>
     </main> 
-    <section id="quote">
+    <section id="sidebar" class="quote">
         <h1>space: we all need some</h1>
     </section>
 </body>
