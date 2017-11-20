@@ -35,7 +35,7 @@ Any slides used during class will be sent out via Ryver after class. Lecture out
     - [Instructions and example](https://gist.github.com/sajoy/aa9ea616493c8887dd257a411b19a85f)
 
 1. Weekly Code Wars challenge
-    - A specific challenge will be assigned Monday and a solution is due Wednesday. We'll go over different solutions in class.
+    - A specific challenge will be assigned for each week. We'll go over different solutions in class.
     - You are also expected to work on Code Wars Challenges for practice through out the week. The goal is to reach Rank of 6 by the end of class. Each Monday you'll turn in a screenshot of your profile to show your progress.
 
 1. Weekly quizzes
