@@ -119,4 +119,4 @@
 
 ## Lab
 
-[Lab: Mobile First Design](https://github.com/acl-301d-fall-2017/lab-01-mobile-first)
+[Lab: Mobile First Design](https://github.com/acl-301d-fall-2017/01-mobile-first)
