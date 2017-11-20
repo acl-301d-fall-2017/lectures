@@ -1,0 +1,79 @@
+h1 {
+    font-family: sans-serif;
+}
+
+nav, article {
+    font-family: monospace;
+}
+
+img[src=""] {
+    height: 200px;
+    background-color: lightgray;
+
+}
+
+header {
+    width: 70%;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav li {
+    display: inline-block;
+    padding: 5px 40px;
+}
+
+main {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-around;
+}
+
+main article {
+    height: 300px;
+    width: 300px;
+    margin: 15px;
+
+    border: solid 4px black;
+    flex-shrink: 0;
+}
+
+.ship-listing section {
+    display: flex;
+}
+
+.ship-listing section div {
+    height: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.ship-listing section div span:after {
+    content: "STAR";
+}
+
+.ship-listing img {
+    width: 100%;
+}
+
+#quote {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 25%;
+    padding: 20px;
+
+    background-color: purple;
+    font-size: 5rem;
+
+    line-height: 50px;
+    color: rgba(255,255,255,.6);
+}
