@@ -40,10 +40,10 @@
     padding: 10px;
     text-align: center;
 }
-
+/* 
 .ship-listing section div span:after {
     content: "STAR";
-}
+} */
 
 .ship-listing img {
     width: 100%;
