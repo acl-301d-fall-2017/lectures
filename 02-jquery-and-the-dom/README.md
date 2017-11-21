@@ -113,6 +113,19 @@ const ship = new Ship (shipData[0]); // evaluate this line
 ship.name;
 ```
 
+```js
+const ship = new Ship (shipData[0]); // evaluate this line
+const ship = new Ship ({ name: 'sweet Creature', owner: 'Owen' }); 
+   function Ship ({name: 'sweet Creature', owner: 'Owen'}) {
+     this.name = data.name;
+     this.name = {name: 'sweet Creature', owner: 'Owen'}.name;
+     this.owner = data.owner;
+     this.owner = {name: 'sweet Creature', owner: 'Owen'}.owner;
+   } 
+   // { name: 'sweet Creature', owner: 'Owen' }  + sink: function () {...}
+const ship = { name: 'sweet Creature', owner: 'Owen', sink: function () {...} } // is a ship object
+```
+
 ####  Lab Prep
 * Walk through today's TODOS
   * Passing an object into a constructor function
