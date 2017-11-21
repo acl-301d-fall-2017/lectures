@@ -1,0 +1,72 @@
+.template { display: none; }
+
+
+/* centered header module */
+.centered-header {
+    text-align: center;
+}
+
+.centered-header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.centered-header nav li {
+    display: inline-block;
+    padding: 5px 40px;
+}
+
+
+/* listing list module and ship listing */
+.listing-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-around;
+}
+
+.ship-listing {
+    height: 300px;
+    width: 300px;
+    margin: 15px;
+
+    border: solid 4px black;
+    flex-shrink: 0;
+}
+
+.ship-listing section {
+    display: flex;
+}
+
+.ship-listing section div {
+    height: 30px;
+    padding: 10px;
+    text-align: center;
+}
+/* 
+.ship-listing section div span:after {
+    content: "STAR";
+} */
+
+.ship-listing img {
+    width: 100%;
+}
+
+/* using attr selector like: input[type="text"] */
+.ship-listing img[src=""] {
+    height: 200px;
+    background-color: lightgray;
+}
+
+
+/* quote module */
+.quote {
+    width: 25%;
+    height: 100%;
+    background-color: purple;
+    padding: 20px;
+    font-size: 5rem;
+
+    line-height: 50px;
+    color: rgba(255,255,255,.6);
+}
