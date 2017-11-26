@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dessert Creator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" data-tab="cake">MAKE A CAKE</a></li>
+        <li><a href="#" data-tab="ice-cream">SCOOP SOME ICE CREAM</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="cake" class="tab-content">
+
+        <form>
+            <fieldset id="icing">
+                <legend>Icing Color</legend>
+                <select name="icing">
+                    <option value="lightgreen" selected>lightgreen</option>
+                    <option value="black">black</option>
+                    <option value="pink">pink</option>
+                </select>
+            </fieldset>
+            
+            <fieldset id="flavor">
+                <legend>Cake Flavor</legend>
+                <label for="chocolate">Chocolate
+                    <input type="radio" id="chocolate" name="flavor" value="brown" checked>
+                </label>
+                <label for="straberry">Strawberry
+                    <input type="radio" id="straberry" name="flavor" value="lightcoral">
+                </label>
+                <label for="marionberry">Marionberry
+                    <input type="radio" id="marionberry" name="flavor" value="darkslateblue">
+                </label>
+            </fieldset>
+        </form>
+        <form id="new-icing">
+            <fieldset>
+                <legend>Add an icing color?</legend>
+                <input type="text" name="newColor">
+                <button>DO IT</button>
+            </fieldset>
+        </form>
+
+        <div id="actual-cake">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <button>DO NOT CLICK</button>
+
+    </section>
+
+    <section id="ice-cream" class="tab-content">
+        <div class="scoop template"></div>
+
+        <div data-type="cup">
+            <div class="scoop"></div>
+            <div class="scoop"></div>
+            <div id="cup"></div>
+        </div>
+        
+        <div data-type="cone">
+            <div class="scoop"></div>
+
+            <div id="cone"></div>
+        </div>
+        
+        <button>DO NOT CLICK</button>
+
+    </section>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

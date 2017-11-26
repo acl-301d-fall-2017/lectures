@@ -1,0 +1,115 @@
+/* TABS */
+
+header ul {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+nav li {
+    padding: 20px;
+    list-style: none;
+
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    border-left: solid 2px black;
+}
+
+nav li:hover {
+    background-color: lightgray;
+}
+
+main {
+    border-top: solid 2px black;
+    /* margin-top: 50px; */
+}
+
+
+/* CAKE */
+
+a[data-tab="cake"], #cake {
+    background-color: azure;
+}
+
+#actual-cake {
+    margin: 100px auto;
+    height: 400px;
+    width: 200px;
+
+}
+
+#actual-cake div:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#actual-cake div {
+    height: 70px;
+    box-sizing: border-box;
+    border: 10px solid lightgreen;
+    background-color: orange;
+}
+
+form > * {
+    display: block;
+}
+
+
+
+/* ICE CREAM */
+
+
+a[data-tab="ice-cream"], #ice-cream {
+    background-color: lavender;
+}
+
+#ice-cream {
+    display: flex;
+    justify-content: space-around
+}
+
+.scoop.template {
+    background-color: pink;
+    display: none;
+}
+
+.scoop {
+    background-color: pink;
+    border-radius: 50%;
+    border: solid 1px #D7D6D6;
+    height: 100px;
+    width: 100px;
+    margin-bottom: -50px;
+}
+
+.scoop.mint {
+    background-color: #ACF6AC;
+}
+
+#cup {
+    background-color: gray;
+    height: 100px;
+    width: 100px;
+    border-bottom-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
+
+div[data-type="cone"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#cone {    
+    /* <3 https://css-tricks.com/snippets/css/css-triangle/ */
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    
+    border-top: 150px solid rgba(228, 173, 84, 1);
+}
+
+.scoop, #cup, #cone {
+    cursor: pointer;
+}
