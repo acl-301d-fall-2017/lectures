@@ -2,10 +2,11 @@
 
 //                                                USING TEMPLATE LITERALS
 
-// const name = prompt('What is your name?');
-// const favDessert = prompt('Hi ' + name + ', what is your favorite dessert?');
-// alert( favDessert.toUpperCase() + '????? GROSS. Here ' + name + '. Have some cake and ice cream instead.').
-
+function greet () {
+    const name = prompt('What is your name?');
+    const favDessert = prompt('Hi ' + name + ', what is your favorite dessert?');
+    alert( favDessert.toUpperCase() + '????? GROSS. Here ' + name + '. Have some cake and ice cream instead.');
+}
 
 
 
@@ -42,7 +43,7 @@ function changeTabs () {
 /*                                                                     IN CLASS
     0. What is the overall purpose or goal of your function?
     1. If there are event listeners in your function, answer the following questions about them: 
-        A. What element is the event listener being attached to?
+        A. What element is the event listener being attached to? What line in `index.html` is it on?
         B. What event is the element listening for?
         C. What happens in the callback function?
     2. Where is your function's call site?
@@ -92,7 +93,6 @@ cakeView.handleNewIcing = function () {
     });
 };
 
-cakeView.init();
 
 
 
@@ -110,44 +110,35 @@ iceCreamView.init = function () {
 };
 
 iceCreamView.handleCone = function () {
-    $('#cone').on('click', function () {
-        $(this).before( $('.scoop.template').clone().removeClass('template') );
-    });
+    // TODO add new scoops to the cone when the cone is clicked
 
-    // add event listener to div.scoop parent
-    $('div[data-type="cone"]').on('click', '.scoop', function () {
-        if (event.target.id === 'cone') return;
-        const clicked = $(event.target);
-        clicked.addClass('mint');
-    });   
+    // TODO change the "flavor" of a scoop in the cone when it is clicked
 };
 
 iceCreamView.handleCup = function () {
-    $('#cup').on('click', function () {
-        $(this).before( $('.scoop.template').clone().removeClass('template') );
+    // when the cup is clicked, give it another scoop!
+    // TODO switch to using jQuery's on method
+    $('#cup').click(function () {
+        const $newScoop = $('.scoop.template').clone().removeClass('template');
+        $(this).before($newScoop);
     });
 
-    // add event listeners to div.scoop
-    $('div[data-type="cup"] .scoop').on('click', function () {
-        const clicked = $(event.target);
-        clicked.addClass('mint');
-    });
+    // TODO when a scoop in the cup is clicked, change it to mint!
 };
 
 iceCreamView.handleSurprise = function () {
-    $( '#ice-cream button' ).on( 'click', function () {
-        // use .each bc we can't use .forEach on a jQuery object!
-        $('.scoop').each( function () {
-            $(this).css('background-color', randomColor());
-        });
-    });
+    // TODO when the button is clicked, randomly color every scoop
 
     // helper function
     function randomColor () {
         const colors = ['peachpuff', 'lightblue', 'mistyrose', 'salmon', 'honeydew', 'navy', 'red', 'cyan', 'gold', 'orchid'];
-        
+
         return colors[ Math.floor( Math.random() * colors.length ) ];
     }
 };
 
+
+// TODO call the functions below when the DOM is ready
+greet();
 iceCreamView.init();
+cakeView.init();

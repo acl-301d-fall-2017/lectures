@@ -17,9 +17,14 @@
 
 ### Announcements
 * Feedback from last couple of weeks
-    * soething
-    * else
-
+    * Submitting labs: 
+        * Written work is redundant. Will revise this! Working on putting all submission info into our submit-process repo.
+    * Pair programming:
+        * Can be difficult.
+        * Will all labs be paired? No, but most will. Tuesday and Friday will be solo.
+    * From 201 project week:
+        * Mid-week code review, to highlight areas that could be DRY'ed/focused on.
+        * More white-boarding practice.
 
 <hr></hr>
 
@@ -60,12 +65,14 @@
         * Vanilla JS events recap (pg. 244)
     * jQuery events
         * Same thing! Different syntax.
-        * With jQuery, event listeners are registered with `$.on()`
+        * With jQuery, event listeners are registered with `$element.click()` (with the event name) or `$element.on()`
             * ```js
                 const $cloudDiv = $('#cloud');
+                $cloudDiv.click(cloudClickHandler);
                 $cloudDiv.on('click', cloudClickHandler);
         * With jQuery, you can trigger an event on an element in your script: `$cloudDiv.click()`
         * Event delegation
+            * Which element should listen for the click?
             * How to add event listeners to dynamically created and inserted elements?
         * Examples: click, change/input, scroll, ready
 * Lab Prep
