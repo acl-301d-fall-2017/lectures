@@ -2,12 +2,18 @@
 
 //                                                USING TEMPLATE LITERALS
 
+`this is a template literal!!!`;
+
 function greet () {
     const name = prompt('What is your name?');
-    const favDessert = prompt('Hi ' + name + ', what is your favorite dessert?');
-    alert( favDessert.toUpperCase() + '????? GROSS. Here ' + name + '. Have some cake and ice cream instead.');
+    // const favDessert = prompt('Hi ' + name + ', what is your favorite dessert?');
+    const favDessert = prompt(`Hi ${name}, what is your favorite dessert?`);
+
+    // alert( favDessert.toUpperCase() + '????? GROSS. Here ' + name + '. Have some cake and ice cream instead.');
+    alert(`${favDessert.toUpperCase()}????? GROSS. Here ${1 + 2}, have some cake and ice cream instead.`);
 }
 
+// greet();
 
 
 
@@ -15,24 +21,31 @@ function greet () {
 //                                                CREATING TABS WITH JQUERY
 
 // TODO replace these event listeners with jQuery event listeners
-const cakeTab = document.querySelector('[data-tab="cake"]');
-cakeTab.addEventListener('click', changeTabs);
+// const cakeTab = document.querySelector('[data-tab="cake"]');
+// cakeTab.addEventListener('click', changeTabs);
 
-const iceCreamTab = document.querySelector('[data-tab="ice-cream"]');
-iceCreamTab.addEventListener('click', changeTabs);
+// const iceCreamTab = document.querySelector('[data-tab="ice-cream"]');
+// iceCreamTab.addEventListener('click', changeTabs);
+
+$('a[data-tab]').click(changeTabs);
 
 function changeTabs () {
     // get the data-tab attribute of the link that was clicked
     // TODO use jQuery to get the data-tab value instead of getAttribute
-    const clickedTabData = event.target.getAttribute('data-tab');
+    // const clickedTabData = event.target.getAttribute('data-tab');
+    // const clickedTabData = $(event.target).attr('data-tab');
+    const clickedTabData = $(this).attr('data-tab');
     console.log( `${clickedTabData} was clicked!` );
 
     // TODO hide all sections and reveal the appropriate section 
     // (note: the sections have ids to match the data-tab values)
+    $('.tab-content').hide();
+    $(`section#${clickedTabData}`).show();
 }
 
-// TODO hide all sections when the page first loads, and simulate a click on the cake section so its open
-
+// TODO simulate a click on the cake section so its open
+// $('.tab-content').hide();
+$('[data-tab="ice-cream"]').click();
 
 
 
@@ -111,19 +124,31 @@ iceCreamView.init = function () {
 
 iceCreamView.handleCone = function () {
     // TODO add new scoops to the cone when the cone is clicked
+    $('#cone').on('click', function () {
+        $(this).before($('.scoop.template').clone().removeClass('template'));
+    });
 
     // TODO change the "flavor" of a scoop in the cone when it is clicked
+    // tell the parent div to listen, but only run if a .scoop child was clicked
+    $('div[data-type="cone"]').on('click', '.scoop', function () {
+        const $clickedScoop = $(event.target);
+        $clickedScoop.toggleClass('mint');
+    });
 };
 
 iceCreamView.handleCup = function () {
     // when the cup is clicked, give it another scoop!
     // TODO switch to using jQuery's on method
-    $('#cup').click(function () {
+    $('#cup').on('click', function () {
         const $newScoop = $('.scoop.template').clone().removeClass('template');
         $(this).before($newScoop);
     });
 
     // TODO when a scoop in the cup is clicked, change it to mint!
+    // attaches click listener to existing scoops, but not new ones, because it only runs once and only finds the .scoop(s) at that moment
+    $('div[data-type="cup"] .scoop').on('click', function () {
+        $(this).toggleClass('mint');
+    });
 };
 
 iceCreamView.handleSurprise = function () {
@@ -139,6 +164,13 @@ iceCreamView.handleSurprise = function () {
 
 
 // TODO call the functions below when the DOM is ready
-greet();
-iceCreamView.init();
-cakeView.init();
+// greet();
+
+console.log('NOOOOOOOOOOOOOOPE DOM IS NOT READY!');
+
+
+$(document).ready(function () {
+    console.log('DOM IS READY!');
+    iceCreamView.init();
+    cakeView.init();
+});
