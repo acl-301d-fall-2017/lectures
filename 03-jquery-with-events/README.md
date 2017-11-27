@@ -86,4 +86,4 @@
   *(Context: 354-361; Essential: 322-353; Reference: 362-366)*
 
 ## Lab
-[Lab 3: jQuery and events](https://github.com/acl-301d-fall-2017/03-jquery-with-events)
+[Lab 3: jQuery and events](https://github.com/acl-301d-fall-2017/03-jquery-events)
