@@ -7,7 +7,16 @@
   <link rel="stylesheet" href="style.css" />
   
   <!-- TODO build a template based on our pet class properties -->
-
+  <script id="pet-template" type="text/x-handlebars-template">
+    <article class="pet">
+      {{{sound}}}
+      <!-- use three handlebars to render HTML tags as HTML -->
+      <h2>{{name}}</h2>
+      <h3>{{type}}</h3>
+      <p>{{description}}</p>
+      <img src='{{image}}'>
+    </article>
+  </script>
 
 </head>
 
@@ -18,18 +27,18 @@
   </header>
   <main>
     <section id="pets">
-        <article class="pet template">
+        <!-- <article class="pet template">
             <h2>Name</h2>
             <h3>Type</h3>
             <p>Description</p>
             <img src='#'>
-        </article>
+        </article> -->
     </section>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <!-- TODO include handlebars -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>  
   <script type="text/javascript" src="pets.js"></script>
   <script type="text/javascript" src="scripts.js"></script>
 </body>
