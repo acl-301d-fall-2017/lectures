@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+.template {
+    display: none;
+}
+
+.pet {
+    background-color: white;
+    border: dotted lightgreen 2px;
+    text-align: center;
+    margin: 10%;
+    padding: 10px;
+}
