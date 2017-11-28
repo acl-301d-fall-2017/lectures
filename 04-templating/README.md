@@ -47,7 +47,7 @@
 <hr></hr>
 
 ## Notes
-
+<s>
 #### Typography
 * Typography
     * Why typography matters
@@ -57,6 +57,7 @@
         * Baseline, x-height, cap height, ascender, descender
     * [Web font formats](https://creativemarket.com/blog/the-missing-guide-to-font-formats)
     * Font sizes and using a font-scale
+</s>
 
 
 #### ES6 Arrow Functions
