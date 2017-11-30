@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Getting another file on the server w/ AJAX!</title>
+    <style>
+        .dream {
+            color: blueviolet;
+            text-decoration: double underline;
+        }
+    </style>
+  </head>
+  <body>
+    <img src="cats.gif" alt="cats from adventure time">
+    <article id="people">
+      <h1>People</h1>
+    </article>
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="people.js"></script>
+    <script src="app.js"></script>
+    <script>
+        Person.fetchAll();
+    </script>
+  </body>
+</html>
