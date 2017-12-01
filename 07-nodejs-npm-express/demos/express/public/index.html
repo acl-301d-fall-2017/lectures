@@ -7,9 +7,17 @@
   <body>
     <h1>Hello World!</h1>
     <p>Congrats on serving up your first file from a server!</p>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
       console.log( 'hello from the browser!' );
       console.log( 'i am a file being run on the client side!' );
+
+
+      $('h1').on('click', function () {
+        // request the humans 
+        $.getJSON('humans')
+            .done( humans => console.log(humans));
+      });
     </script>
   </body>
 </html>
