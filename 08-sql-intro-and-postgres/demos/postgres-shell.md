@@ -3,14 +3,10 @@
 ## Starting the server
 *You must do this every time you restart your machine*
 ```
-
-$ pg_ctl -D /usr/local/var/postgres/ -l /usr/local/var/postgres/server.log start
-
-<!-- you can alias for the above command as pgstart -->
 $ pgstart
 
-<!-- for Windows your path might look like the following -->
-> pg_ctl -D 'C:/Program Files/PostgreSQL/9.6/data' start
+<!-- pgstart is an alias for the following command -->
+$ pg_ctl -D /usr/local/var/postgres/ -l /usr/local/var/postgres/server.log start
 
 <!-- If you installed postgreSQL with HomeBrew, you can also do this: -->
 $ brew services start postgres
@@ -54,7 +50,7 @@ sjschmidt=# \l
 List of databases
 Name    |   Owner   | Encoding |   Collate   |    Ctype    |    Access privileges
 -----------+-----------+----------+-------------+-------------+----------
-boogers   | sjschmidt | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
+movies    | sjschmidt | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
 sjschmidt | sjschmidt | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
 (2 rows)
 
@@ -62,9 +58,9 @@ sjschmidt | sjschmidt | UTF8     | en_US.UTF-8 | en_US.UTF-8 |
 
 #### Connect to a database
 ```
-sjschmidt=# \c boogers
-You are now connected to database "booger" as user "sjschmidt".
-booger=# \c sjschmidt
+sjschmidt=# \c movies
+You are now connected to database "movies" as user "sjschmidt".
+movies=# \c sjschmidt
 You are now connected to database "sjschmidt" as user "sjschmidt".
 ```
 
