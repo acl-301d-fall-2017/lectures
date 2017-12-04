@@ -14,37 +14,47 @@
 
 //                                                         USING THEM
 function sing (lyrics) {
-    console.log(`~~la la ~~la ~${lyrics}` );
+    console.log(`~~la la ~~la ~${lyrics}`);
 }
-sing('where is the love?');
+// sing('where is the love?');
 
-// function singAnd (lyrics, callback) {
-//     console.log(`~~la la ~~la ~${lyrics}` );
-//     callback();
-// }
-// singAnd('LET IT GOOOOOO', () => {console.log('*drops mic*');});
 
-// function dropMic () {
-//     console.log('*drops mic*');
-// }
-// singAnd('can you paint with all the colors of the winnnnnd', dropMic);
 
+
+
+
+function singAnd (lyrics, callback) {
+    console.log(`~~la la ~~la ~${lyrics}` );
+    callback();
+}
+
+// singAnd('LET IT GOOOOO!', () => { console.log('*ice storm*'); });
+// singAnd('it is a small world after all', 'a string' ); // fails bc string is not a function
+
+
+function dropMic () {
+    console.log('*drops mic*');
+}
+
+singAnd('can you paint with all the colors of the winnnnnd', dropMic);
+
+singAnd('call me, beep me, if you wanna reach me', () => { console.log('** KIM POSSIBLE!**'); });
 
 
 
 //                                               AGAIN!
 // define our function Hike.fetchall() with a callback parameter
-// Hike.fetchAll = callback => {
+// Hike.fetchAll = monekys => {
 //     $.get('/hikes')
 //         .then(
 //             function(results) {
 //                 Hike.loadAll(results);
-//                 callback();
+//                 monekys();
 //             }
 //         );
 // };
 
-// // // call our function and pass it a callback function
+// call our function and pass it a callback function
 // Hike.fetchAll(() => {console.log('monkeys');});
 
 

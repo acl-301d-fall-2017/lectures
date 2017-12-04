@@ -1,16 +1,18 @@
 'use strict';
 
 // Add pg module
-
+const pg = require('pg');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Set up the client connection to the DB
-// 'postgres:<pw>//localhost:5432/demos'
+// 'postgres://localhost:5432/demos'
 // 'postgres://localhost:5432/kilovolt'
 
+const client = new pg.Client('postgres://postgres:1234@localhost:5432/demos');
+client.connect();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,11 +25,32 @@ app.get('/', function(request, response) {
 
 // DB routes for CRUD operations
 app.get('/db/person', function(request, response) {
-
+    client.query('SELECT * FROM persons;')
+        .then(function(data) {
+            response.send(data);
+        })
+        .catch(function(err) {
+            console.error(err);
+        });
 });
 
 app.post('/db/person', function(request, response) {
-   
+    client.query(`
+        INSERT INTO persons(name, age, ninja)
+        VALUES($1, $2, $3);
+    `,
+        [
+            request.body.name,
+            request.body.age,
+            request.body.ninja,
+        ]
+    )
+        .then(function(data) {
+            response.redirect('/');
+        })
+        .catch(function(err) {
+            console.error(err);
+        });
 });
 
 createTable();
