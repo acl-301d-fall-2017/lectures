@@ -21,7 +21,17 @@ app.get('/', function(request, response) {
 
 // routes for fetching data from DB 
 app.get('/tasks', function(request, response) {
-    client.query('SELECT * FROM tasks;')
+    /*
+        SELECT content, categories.name AS category, users.name AS person 
+        FROM tasks, users, categories 
+        WHERE tasks.user_id = users.user_id AND tasks.category_id = categories.category_id;
+    */
+    client.query(`
+        SELECT content, users.name AS person, categories.name AS category 
+        FROM tasks 
+        INNER JOIN users ON tasks.user_id = users.user_id 
+        INNER JOIN categories ON tasks.category_id = categories.category_id;
+    `)
         .then(function(data) {
             response.send(data.rows);
         })
@@ -99,49 +109,135 @@ app.get('/users/:username/tasks', function(request, response) {
         });
 });
 
-createTable();
-
+// createTable();
+loadDB();
 
 app.listen(PORT, function() {
     console.log(`Listening on port: ${PORT}`);
 });
 
 
-////// Create database table helper function //////
+function loadUsers() {
+    fs.readFile('./public/data/tasks.json', function(err, fd) {
+        JSON.parse(fd.toString()).forEach(function(ele) {
+            client.query(
+                'INSERT INTO users(name) VALUES($1) ON CONFLICT DO NOTHING',
+                [ele.person]
+            );
+        });
+    });
+}
 
-function loadFromJSON() {
-    // PUT YOUR RESPONSE HERE
-    client.query('SELECT COUNT(*) FROM tasks')
+function loadCategories() {
+    fs.readFile('./public/data/tasks.json', function(err, fd) {
+        JSON.parse(fd.toString()).forEach(function(ele) {
+            client.query(
+                'INSERT INTO categories(name) VALUES($1) ON CONFLICT DO NOTHING',
+                [ele.category]
+            );
+        });
+    });
+}
+
+function loadTasks() {
+    client.query('SELECT COUNT(*) FROM articles')
         .then(result => {
             if(!parseInt(result.rows[0].count)) {
-                fs.readFile('./public/data/tasks.json', (err, fd) => {
-                    JSON.parse(fd.toString()).forEach(ele => {
-                        client.query(`
-                            INSERT INTO
-                            tasks(content, person, category)
-                            VALUES ($1, $2, $3);
-                            `,
-                            [ele.content, ele.person, ele.category]
-                        );
+                fs.readFile('./public/data/tasks.json', function(err, fd) {
+                    JSON.parse(fd.toString()).forEach(function(ele) {
+                        // would query to add each task
                     });
                 });
             }
         });
 }
 
-function createTable() {
+function loadDB() {
     client.query(`
-      CREATE TABLE IF NOT EXISTS tasks (
-      task_id SERIAL PRIMARY KEY,
-      content VARCHAR(255) NOT NULL,
-      person VARCHAR(255) NOT NULL,
-      category VARCHAR(20));`
+        CREATE TABLE IF NOT EXISTS
+        users (
+        user_id SERIAL PRIMARY KEY,
+        name VARCHAR(255) UNIQUE NOT NULL
+        );`
     )
-        .then(() => {
-            loadFromJSON();
+        .then(data => {
+            loadUsers(data);
         })
         .catch(err => {
-            console.error(`createTable ${err}`);
+            console.error(err);
         });
-}
+
+    client.query(`
+        CREATE TABLE IF NOT EXISTS
+        categories (
+        category_id SERIAL PRIMARY KEY,
+        name VARCHAR(255) UNIQUE NOT NULL
+        );`
+    )
+        .then(data => {
+            loadCategories(data);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
+    client.query(`
+        CREATE TABLE IF NOT EXISTS tasks (
+        task_id SERIAL PRIMARY KEY,
+        content VARCHAR(255) NOT NULL,
+        user_id INTEGER REFERENCES users(user_id) NOT NULL,
+        category_id INTEGER REFERENCES categories(category_id)
+    );`
+    )
+        .then(data => {
+            // loadTasks(data);
+            //  load the tasks manually!
+        })
+        .catch(err => {
+            console.error(err);
+        });}
+
+
+
+
+
+
+
+////// Create database table helper function //////
+
+// function loadFromJSON() {
+//     // PUT YOUR RESPONSE HERE
+//     client.query('SELECT COUNT(*) FROM tasks')
+//         .then(result => {
+//             if(!parseInt(result.rows[0].count)) {
+//                 fs.readFile('./public/data/tasks.json', (err, fd) => {
+//                     JSON.parse(fd.toString()).forEach(ele => {
+//                         client.query(`
+//                             INSERT INTO
+//                             tasks(content, person, category)
+//                             VALUES ($1, $2, $3);
+//                             `,
+//                             [ele.content, ele.person, ele.category]
+//                         );
+//                     });
+//                 });
+//             }
+//         });
+// }
+
+// function createTable() {
+//     client.query(`
+//       CREATE TABLE IF NOT EXISTS tasks (
+//       task_id SERIAL PRIMARY KEY,
+//       content VARCHAR(255) NOT NULL,
+//       person VARCHAR(255) NOT NULL,
+//       category VARCHAR(20));`
+//     )
+//         .then(() => {
+//             loadFromJSON();
+//         })
+//         .catch(err => {
+//             console.error(`createTable ${err}`);
+//         });
+// }
 
