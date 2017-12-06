@@ -9,51 +9,62 @@
 <hr></hr>
 
 ## Schedule
-1. Objectives and Stand Up
+1. Objectives
 1. Code Review
-1. Functional Programming
+1. Scope, closures, higher order functions
 1. Lab Prep
 
 ### Announcements
-* **DUE MONDAY** 
-    - quiz #2
-    - portfolio pair assignment from yesterday
-    - today's pair lab
-    - feedback
-    - code wars update #2
+* **QUIZ 2 DUE FRIDAY**
+* Finishing up one on ones today!
+* PROJECT WEEK!!!! in a week!
+    * We'll assign groups Monday so you can start talking about ideas.
+    * ** Your project proposal is due at noon on Wednesday **
+    * Basic needs:
+        * Each person must make meaningful contributions in HTML, CSS, and JavaScript.
+        * Your web site must have at least 3 interlinked "pages" and clear navigation.
+        * Your web site must have at least 2 pages that accept and process user input.
+        * Your web site's state must persist between page reloads. (Using a postgres database.)
+        * Your web site must be deployed live on the Internet.
+        * Your web site must make a call to a third party API.
+    * Examples
+        * [Yum-Me](http://yum-me.herokuapp.com/)
+        * [Garage fellows](garagefellows.herokuapp.com)
+        * [Space Tweets](https://tweetsfromspace.herokuapp.com/)
+        * [Peer Politics](http://peer-politics.herokuapp.com/)
+        * [Handle Me](https://handle-me.herokuapp.com/)
 * Questions?
 
 <hr></hr>
 
 ## Learning Objectives
-* Understand advantages of functional programming and reasons for its recent rise in popularity
 * Correctly use **.forEach(), .map(), .filter(), .reduce()** methods to explore and modify a data set
 * Construct modularity with IIFE patterns
 
 <hr></hr>
 
 ## Notes
-* [Code-review](https://github.com/acl-301d-summer-2017/09-sql-joins-relations/pull/5)
+* Scope
+    * Basics of scope
+* Closures
+    * IIFE
+    * Encapsulation
+    * The Javascript Module Pattern
 * Functional Programming
     * "Sometimes, the elegant implementation is just a function.  Not a method.  Not a class.  Not a framework.  Just a function."
-    * Scope
-        * Basics of scoping
-    * Closures
-        * IIFE
-        * Encapsulation
-        * The Javascript Module Pattern
     * Declarative vs Imperative code
         * Provide examples of imperative coding
         * Provide examples of declarative programming - using JavaScript array methods like** map, filter**, and **reduce**
     * Stateless (Pure) functions
-    * Immutability
-        * Provide examples
-    * First-class functions
+    * Higher order functions
         * **forEach**
         * **map**
         * **reduce**
         * **filter**
-
+* Lab Prep
+    * Back to the front end!
+    * Modularizing `Article` and `ArticleView` with IIFE's
+    * Using higher order array functions to manipulate the data we get from the server
 
 ## Readings
 
@@ -61,6 +72,4 @@
 * [Eloquent JavaScript, Ch.5 Higher Order Function*s](http://eloquentjavascript.net/05_higher_order.html) (Essential)
 
 ## Lab
-[Lab 10: Functional Programming](https://github.com/acl-301d-summer-2017/10-functional-programming)
-
-[Portfolio Lab](https://github.com/acl-301d-summer-2017/10-functional-programming/blob/master/PORTFOLIO-ASSIGNMENT.md)
+[Lab 10: Functional Programming](https://github.com/acl-301d-fall-2017/10-functional-programming)
