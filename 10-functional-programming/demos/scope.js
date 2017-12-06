@@ -10,11 +10,16 @@ function secretPassword () {
         console.log(`User is ${access} with clearance level ${clearance}.`);
     }
 
-    console.log(`User is ${access} with clearance level ${clearance}.`);
+    // console.log(`User is ${access} with clearance level ${clearance}.`);
 }
 
-secretPassword();
+// console.log(`I know the pasword~ ${hidden}`);
+
+// secretPassword();
 // console.log( `I don't know the hidden word! ${hidden} );
+
+
+
 
 
 
@@ -26,15 +31,23 @@ function superSecretPassword() {
 
     function spillIt () {
         // has access to its variables, its parent variables, and any global variables
-        const pin = '2221';
+        var pin = '2221';
         console.log( `don't tell anyone but the secret password is ${password}!` );
         console.log(`or you can use the pin: ${pin}`);
     }
 
+    // console.log('pin is:' + pin);
+
+    // spillIt();
+
     // we can expose enclosed variables or functions by returning them.
-    // return spillIt;
+    return spillIt;
 }
 
-superSecretPassword();
+// superSecretPassword();
 // spillIt();
-// console.log( `I don't know the hidden word! ${hidden} );
+
+const spillIt = superSecretPassword();
+console.log(spillIt);
+spillIt();
+
