@@ -16,7 +16,7 @@
     1. Deploy Front End to Gh-Pages
 
 ### Announcements
-* 
+* Quiz Due TMRW!
 
 ## Learning Objectives
 - Be able to push a dev site to production, so the world can see it.
