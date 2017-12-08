@@ -15,6 +15,8 @@
 
 ### Announcements
 * Quiz review?
+* Tool to visualize your code: https://github.com/Bogdan-Lyashenko/js-code-to-svg-flowchart
+* CLEAN YOUR CODE.
 
 <hr></hr>
 
@@ -45,8 +47,9 @@
             * Updates History API to allow for ‘forward’ and ‘back’ actions 
     * Demo - How
         * Client-side routing
-            * How to use page.js
-            * Docs!
+            * Using page.js to handle our routes in our client
+            * `app('/<route>', <callback> );` (look familiar?)
+            * `app()`'s callback signature: `(ctx,next) => {}` (a little reminiscent of `(req, res)` in our server!)
 
 ## Readings
 * JS&jQ: 424-427 (History API) (Essential)
