@@ -1,25 +1,3 @@
-<!-- 
-
-CLIENt
-- add page.js so that our SPA still has the illusion of routes
-- do some mobile first css
-- add a form to create new cards
-    - from
-    - to
-    - greeting
-    - category
-    
-- add nav: 
-    - new
-    - cards
-    - cards by category
-
-SERVER
-- add a POST route /cards
-- add a  GET /cards/:id and cards/:name
-
-
- -->
 # **Module 3: The Controller**
 # Class 12: Single Page Applications & Client-Side Routing
 
@@ -36,8 +14,7 @@ SERVER
 1. Lab Prep
 
 ### Announcements
-*
-*
+* Quiz review?
 
 <hr></hr>
 
