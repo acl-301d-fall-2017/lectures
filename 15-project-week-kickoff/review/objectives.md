@@ -1,0 +1,57 @@
+## Week 1: The View
+- Discuss the differences between mobile first design, responsive web design, and adaptive web design.
+- Create a flexible layout using the following: percentage based media, media queries, and fluid layout.
+- Scale a website to its viewport using the meta tag.
+- Streamline development using **live-server**.
+- Organize CSS using SMACSS.
+- Display icons on a website using icon fonts, and specifically IcoMoon.
+- Display icons on a website using the psuedo elements `:before` and `:after`.
+- Describe the different parts of the MVC design pattern.
+- Include the jQuery library using a CDN or including it locally.
+- Describe the pros and cons of using jQuery.
+- Perform DOM manipulations using `append`, `remove`, `clone`, `data`, `html`, `text`.
+- Traverse the DOM tree, with `parents`, `children`, `find`.
+- Differentiate between certain methods & the process of chaining.
+- Include JavaScript files accounting for dependencies by loading `<script>` tags in order.
+- Create event listeners using jQuery's `$.on()`
+- Distinguish when to use event delegation.
+- Select and target HTML elements using the `data` attribute.
+- Run our scripts when the DOM is ready using `$(document).ready()`
+- Discuss different ways to reuse HTML, specifically using templates.
+- Display data using a Handlebars template.
+- Distinguish between the different Handlebars expression types ( `{{}}` vs `{{{}}}` ).
+- Add personality to a website by styling the typography.
+- Interpolate a variable into a string using ES2015 template literals.
+- Build a JSON string using data given by a user. 
+- Integrate 3rd party libraries for dynamic code highlighting and markdown.
+
+## Week 2: The Model
+- Identify when apps need persistence, to improve the UX and isolate the model logic in the code base.
+- Explain how the browser uses the request-response (WRRC) cycle to render an HTML file or AJAX call.
+- Implement AJAX to get data to display.
+- Declare variables using ES2015 `let` and `const`.
+- Understand client-server architecture
+- Review the differences between the Browser Runtime env and Node's Runtime env
+- Usage and best practices when implementing a NodeJS project using NPM packages and package.json configs
+- Understand the basics of working with ExpressJS for server-side routing and functionality
+- Understand the basic concepts of databases
+- Effectively use basic SQL commands to create, read, update, and delete rows from a table
+- Understand the fundamental architecture of full-stack applications and how we can locally emulate them
+- Understand how objects in a database can be interrelated with foreign keys
+- Have familiarity with queries using SQL that select data from across multiple tables
+- Have familiarity with different relationships in database tables
+- Understand advantages of functional programming and reasons for its recent rise in popularity
+- Correctly use **.forEach(), .map(), .filter(), .reduce()** methods to explore and modify a data set
+- Construct modularity with IIFE patterns
+
+## Week 3: The Controller
+- Identify useful urls for an app, and be able to implement those routes given the new library presented.
+- Recognize other server technologies such as node, new dependencies
+- Understand HTTP and the central role that REST plays.
+- Use RESTful routes for a web service, to retrieve their own github repos
+- Design RESTful endpoints for their own blogging app
+- Be able to push a dev site to production, so the world can see it.
+- Understand the difference between a static page and a dynamically generated app page.
+- Understand how our PageJS router is middleware
+- Use PageJS context object to get query params
+- Use PageJS context object to save state
